@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  margin-top: 20vh;
+}
+
+body {
+  background-image: url('image/ULM.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.navbar-brand {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+}
+.navbar-brand span {
+  color: #ff7200;
+}
+
+.judul {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  color: #fff;
+}
+
+.judul .kalimat {
+  padding-left: 20px;
+  padding-bottom: 25px;
+  font-family: Arial;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+}
+
+.judul > h1 {
+  font-family: "Times New Roman";
+  font-size: 50px;
+  padding-left: 20px;
+  /* margin-top: 50px; */
+  letter-spacing: 2px;
+}
+
+.judul .tombol {
+  width: 160px;
+  height: 40px;
+  background: #ff7200;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.judul .tombol a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.tombol:hover {
+  background-color: #fff;
+}
+
+.judul span {
+  color: #ff7200;
+  font-size: 65px;
+}
+
+.foto img {
+  margin-top: -450px;
+  margin-left: 850px;
+  width: 25%;
+  height: auto;
+  position: relative;
+}
+
+@media (max-width:870px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+    justify-content: baseline;
+  }
+
+  .right {
+    width: 100%;
+  }
+  .foto img {
+    margin-left: 200px;
+    width: 32%;
+    height: auto;
+    margin-bottom: 50%;
+    position: relative;
+    left: 400px;
+    bottom: 100px;
+  }
+}
+@media (max-width:570px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .foto img {
+    background-image: none;
+  }
+
+  .foto img {
+    margin-bottom: 50%;
+    position: relative;
+    bottom: 190px;
+    left: 110px;
+    width: 32%;
+    height: auto;
+  }
+
+}
+
