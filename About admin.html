@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+   <!-- jQuery CDN - Slim version (=without AJAX) -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+   <!-- Popper.JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <title>About</title>
+</head>
+<style>
+  
+  body {
+    margin: 0;
+    background: linear-gradient(90deg, rgb(253, 185, 116), rgb(247, 151, 7));
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+
+  * {
+    font-family: sans-serif;
+  }
+
+  /* .back-top {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    border: none;
+    padding: 7px 20px;
+    color: rgb(236, 229, 201);
+    background-color: rgb(18, 17, 12);
+    font-weight: 600;
+    border-radius: 10px;
+  } */
+
+
+  .header {
+    width: 1000%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .header>.subheader {
+    width: 110%;
+    height: auto;
+    color: rgb(9, 8, 8);
+    text-align: center;
+    font-size: 20px;
+
+  }
+
+  .header>.bottom-book {
+    text-decoration: none;
+    font-size: 22px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 30px;
+    margin: 10px;
+    margin-bottom: 5vh;
+    color: rgb(13, 30, 15);
+  }
+
+  .button-profil {
+    /* text-align: center;
+  margin: 0 auto; */
+    background-color: rgb(41, 41, 41);
+    border: none;
+    color: white;
+    font-size: 40px;
+    padding: 15px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* margin-top: 2vh; */
+    margin: 30px;
+  }
+
+  .button-profil-close {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    float: right;
+    transition: 0.2s;
+  }
+
+  .button-profil-close:hover{
+    background-color: rgb(237, 194, 194);
+    color: white;
+  }
+
+  .Pop-up-profil {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.33);
+    /* padding: 10px; */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(240, 56, 56, 0.5);
+    transition: all 0.5s ease-in-out;
+    width: 70%;
+    overflow-y: auto;
+    max-height: 750px;
+    /* transform: rotate(50deg); */
+    
+  }
+
+  .Pop-up-profil.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+    animation: slideDown 0.5s forwards;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: DodgerBlue; */
+    justify-content: center;
+  }
+
+  .flex-container>div {
+    background-color: #f6f6f6;
+    box-shadow: 1px 1px 5px rgb(75, 75, 75);
+    width: auto;
+    margin: 10px 10px 50px 20px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    /* line-height: 75px; */
+    /* font-size: 30px; */
+  }
+
+  .latar-btn-tutup {
+    background-color: #f6f6f676;
+    min-width: fit-content;
+    height: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid rgb(43, 43, 43);
+  }
+
+  .flex-container > div > button {
+    border: none;
+    /* color: rgb(255, 255, 255); */
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .flex-container > div > button:hover{
+    transform: scale(1.5);
+  }
+  @keyframes slideDown {
+  0% { top: -100%; } /* Mulai dari posisi di luar layar di atas */
+  100% { top: 50%s; } /* Berhenti di posisi di bawah */
+  }
+
+  .wrapper {
+    display: flex;
+    width: 92%;
+    align-items: stretch;
+    perspective: 1500px;
+}
+
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #344438;
+    color: gold;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+    transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #344438;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+#sidebar ul p {
+    color: black;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#sidebar ul li a:hover {
+    color: black;
+    background: #FFC26F;
+    text-decoration: none;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #555;
+    background: #FFC26F;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: black;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+
+#sidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(90deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+}
+
+</style>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Project Sukses</h3>
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a href="dashboard admin.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="#" style="background-color:#FFC26F; color:black;">About</a>
+        </li>
+        <li>
+          <a onclick="Logout()" >Log Out</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Page Content Holder -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+        </nav>
+      </div>
+  <div class="header">
+    <div class="subheader">
+      <h3>Welcome To Project Sukses</h3>
+      <h1>Implementasi Teknologi Web Development untuk Website Informasi UKM di Lingkungan Kampus</h1>
+      <p>Tujuan pembangunan website ini adalah untuk memberikan informasi tentang mahasiswa Pendidikan Komputer yang aktif dalam UKM selama perkuliahan dan memberikan informasi tentang UKM yang diikuti setiap mahasiswa tersebut agar menjadi motivasi mahasiswa untuk bergabung dan berminat mengikutinya.</p>
+      <p>Implementasi teknologi web development dapat membantu setiap UKM di lingkungan kampus untuk, Meningkatkan visibilitas dan kredibilitas UKM, memudahkan proses promosi dan pemasaran UKM, meningkatkan interaksi dan keterlibatan dengan anggota dan masyarakat, meningkatkan efisiens, dan efektivitas pengelolaan informasi dan kegiatan UKM</p>
+    </div>
+    <center>
+    <button class="button-profil" id="tombol-profil">CEO Project Sukses</button>
+  </center>
+  </div>
+  <div class="Pop-up-profil" id="Profil">
+    <div class="latar-btn-tutup">
+      <button class="button-profil-close" id="btn-close">X</button>
+    </div>
+    <h1 align="center">CEO</h1>
+    <div class="flex-container">
+      <div> <img src="CSS & IMG/image/Billy.jpg" width="240" height="240">
+        <h2>Muhammad Ardhabilly</h2>
+        <h4>NIM : 2210131310003</h4>
+        <h4>Prodi : Pendidikan Komputer</h4>
+        <h4>Programming HTML dan CSS</h4>
+        <a href="http://wa.me/6289691426737"><img src="CSS & IMG/image/Whatsapp.png" alt="Wa" width="30px"> </a><a href="https://instagram.com/m.ardhabilly__?igshid=MzNlNGNkZWQ4Mg=="><img src="CSS & IMG/image/Instagram.png" alt="Wa" width="33px"> </a>
+      </div>
+      <div> <img src="CSS & IMG/image/zimi.jpg" width="240" height="240">
+        <h2>Muhammad Azimi</h2>
+        <h4>NIM : 2210131210021</h4>
+        <h4>Prodi : Pendidikan Komputer</h4>
+        <h4>Programming HTML dan CSS</h4>
+        <a href="http://wa.me/6285251920994"><img src="CSS & IMG/image/Whatsapp.png" alt="Wa" width="30px"> </a><a href="https://instagram.com/mhmmd_azimi_?igshid=MzNlNGNkZWQ4Mg=="><img src="CSS & IMG/image/Instagram.png" alt="Wa" width="33px"> </a>
+      </div>
+      <div> <img src="CSS & IMG/image/ilmi.jpg" width="240" height="240">
+        <h2>Zainal Ilmi</h2>
+        <h4>NIM : 2210131310011</h4>
+        <h4>Prodi : Pendidikan Komputer</h4>
+        <h4>Programming HTML dan CSS</h2>
+        <a href="http://wa.me/6282251907825"><img src="CSS & IMG/image/Whatsapp.png" alt="Wa" width="30px"> </a><a href="https://instagram.com/znilmiiiii___?igshid=ZDc4ODBmNjlmNQ=="><img src="CSS & IMG/image/Instagram.png" alt="Wa" width="33px"> </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const btnAbout = document.getElementById('tombol-profil');
+    const Profil = document.getElementById('Profil');
+    const btnClose = document.getElementById('btn-close');
+    btnAbout.addEventListener('click', () => {
+      Profil.classList.add('show');
+    });
+    btnClose.addEventListener('click', () => {
+      Profil.classList.remove('show');
+    });
+
+    
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+
+    function Logout (){
+      sessionStorage.removeItem('username');
+      sessionStorage.removeItem('fullname');
+      sessionStorage.removeItem('password');
+      
+      localStorage.removeItem('username');
+      localStorage.removeItem('fullname');
+      localStorage.removeItem('password');
+      
+      localStorage.removeItem('keepLoggedIn');
+      window.location ='landing page.html'
+    }
+  </script>
+</body>
+
+</html>
